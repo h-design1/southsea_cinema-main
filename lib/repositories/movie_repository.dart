@@ -2,7 +2,7 @@
 import 'package:southsea_cinema/models/movie.dart';
 
 class MovieRepository {
-  List<Movie> getMovie() {
+  List<Movie> getMovies() {
     return const [
       Movie(
         id: "up",
