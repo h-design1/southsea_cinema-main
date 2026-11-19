@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:southsea_cinema/models/movie.dart';
-import 'package:southsea_cinema/repositories/movie_repository.dart';
 
 class MovieCard extends StatelessWidget {
   final Movie movie;
@@ -8,9 +7,6 @@ class MovieCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final movieRepository = MovieRepository();
-    final List<Movie> movies = movieRepository.getMovies();
-
     return Card(
         margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
