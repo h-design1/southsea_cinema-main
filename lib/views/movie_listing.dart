@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:southsea_cinema/constants.dart';
 import "package:southsea_cinema/models/movie.dart";
 import 'package:southsea_cinema/widgets/nav_drawer.dart';
+import 'package:southsea_cinema/widgets/primary_button.dart';
 
 class MovieListing extends StatefulWidget {
   final Movie movie;
@@ -26,18 +27,23 @@ class _MovieListingState extends State<MovieListing> {
       ),
       drawer: const NavDrawer(),
       body: Container(
-        color: cinemaBrand,
+        color: cinemaBackground,
         child: Column(children: [
           const Text("Movie listing"),
           Text(widget.movie.name),
           const Text("Southsea cinema room"),
           const Text("26th october 2026"),
-          ElevatedButton(
-            onPressed: () {
-              print("Add to order button pressed");
-            },
-            child: const Text("Add to order"),
-          ),
+          PrimaryButton(
+              label: "Add to order",
+              onPressed: () {
+                print("Add to order button pressed");
+              }),
+          // ElevatedButton(
+          //   onPressed: () {
+          //     print("Add to order button pressed");
+          //   },
+          //   child: const Text("Add to order"),
+          // ),
           DropdownMenu<int>(
             initialSelection: _ticketQuantity,
             label: const Text("Select number of tickets"),
